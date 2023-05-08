@@ -1,7 +1,7 @@
 
 # ChatGLM_LoRA
 
-使用deepspeed+trainer+lora微调ChatGLM.简单高效。
+使用deepspeed+trainer+lora微调ChatGLM
 
 ## Data Structure
 
@@ -12,6 +12,7 @@ instruction_data.json中提供了数据样例
 ## Train
 
 1.修改train.sh中模型和数据路径
+
 2.运行sh train.sh
 ```bash
     CUDA_VISIBLE_DEVICES=${TOT_CUDA} deepspeed --master_port=$PORT --num_gpus=3 finetune.py \
