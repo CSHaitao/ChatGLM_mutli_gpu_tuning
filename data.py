@@ -2,7 +2,7 @@
 Author: lihaitao
 Date: 2023-05-08 17:12:01
 LastEditors: Do not edit
-LastEditTime: 2023-05-08 17:12:01
+LastEditTime: 2023-05-09 14:10:26
 FilePath: /lht/ChatGLM_LoRA/data.py
 '''
 import random
@@ -15,13 +15,13 @@ from torch.utils.data import Dataset
 from tqdm import tqdm
 from transformers import DefaultDataCollator,PreTrainedTokenizer
 class InstrutionDataset(Dataset):
-    def __init__(self, data_path):
+    def __init__(self, data_path,prefix=""):
         self.dataset = []
         with open(data_path, "r", encoding="utf-8") as fh:
             for i, line in enumerate(fh):
                 sample = json.loads(line.strip())                
                 self.dataset.append(
-                    {"input": sample["instruction"] + sample["input"],"answer": sample["answer"]})
+                    {"input": prefix + sample["instruction"] + sample["input"],"answer": sample["answer"]})
             
 
 

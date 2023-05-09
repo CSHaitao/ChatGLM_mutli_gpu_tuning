@@ -3,13 +3,13 @@
  # @Author: lihaitao
  # @Date: 2023-05-08 17:17:26
  # @LastEditors: Do not edit
- # @LastEditTime: 2023-05-08 17:17:27
- # @FilePath: /lht/ChatGLM_LoRA/train.sh
+ # @LastEditTime: 2023-05-09 13:59:44
+ # @FilePath: /lht/ChatGLM_LoRA/lora.sh
 ### 
 TOT_CUDA="1,2,3"
 PORT="11451"
 
-    CUDA_VISIBLE_DEVICES=${TOT_CUDA} deepspeed --master_port=$PORT --num_gpus=3 finetune.py \
+    CUDA_VISIBLE_DEVICES=${TOT_CUDA} deepspeed --master_port=$PORT --num_gpus=3 finetune_lora.py \
         --train_path ./instrution_data.json \
         --max_len 768 \
         --max_input_len 512 \

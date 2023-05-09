@@ -40,18 +40,28 @@ class DataTrainingArguments:
                     "If False, will pad the samples dynamically when batching to the maximum length in the batch."
         },
     )
+    ignore_pad_token_for_loss: bool = field(
+        default=True,
+        metadata={
+            "help": "Whether to ignore the tokens corresponding to padded labels in the loss computation or not."
+        },
+    )
+    source_prefix: Optional[str] = field(
+        default="", metadata={"help": "A prefix to add before every source text (useful for T5 models)."}
+    )
+    forced_bos_token: Optional[str] = field(
+        default=None,
+        metadata={
+            "help": (
+                "The token to force as the first generated token after the decoder_start_token_id."
+                "Useful for multilingual models like mBART where the first generated token"
+                "needs to be the target language token (Usually it is the target language token)"
+            )
+        },
+    )
 
-    # def __post_init__(self):
-    #     if self.train_dir is not None:
-    #         files = os.listdir(self.train_dir)
-    #         self.train_path = [
-    #             os.path.join(self.train_dir, f)
-    #             for f in files
-    #             if f.endswith('tsv') or f.endswith('json')
-    #         ]
-    #     if '+' in self.data_type:
-    #         _data_types = self.data_type.split('+')
-    #         self.data_type = [i.strip() for i in _data_types]
+
+
 
 @dataclass
 class ModelArguments:
@@ -82,6 +92,36 @@ class ModelArguments:
     use_fast_tokenizer: bool = field(
         default=False,
         metadata={"help": "Whether to use one of the fast tokenizer (backed by the tokenizers library) or not."},
+    )
+    use_auth_token: bool = field(
+        default=False,
+        metadata={
+            "help": (
+                "Will use the token generated when running `huggingface-cli login` (necessary to use this script "
+                "with private models)."
+            )
+        },
+    )
+    resize_position_embeddings: Optional[bool] = field(
+        default=None,
+        metadata={
+            "help": (
+                "Whether to automatically resize the position embeddings if `max_source_length` exceeds "
+                "the model's position embeddings."
+            )
+        },
+    )
+    quantization_bit: Optional[int] = field(
+        default=None
+    )
+    pre_seq_len: Optional[int] = field(
+        default=None
+    )
+    prefix_projection: bool = field(
+        default=False
+    )
+    ptuning_checkpoint: str = field(
+        default=None, metadata={"help": "Path to p-tuning v2 checkpoints"}
     )
 
 
