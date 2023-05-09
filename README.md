@@ -2,7 +2,7 @@
  * @Author: lihaitao
  * @Date: 2023-05-08 17:52:50
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-05-09 14:28:18
+ * @LastEditTime: 2023-05-09 14:34:49
  * @FilePath: /lht/ChatGLM_LoRA/README.md
 -->
 
@@ -144,3 +144,9 @@ peft==0.2.0
 
 - [ ] 开源微调数据和微调模型
 
+
+## Contact
+
+If you find our work useful, please do not save your star!
+
+If you have any questions, please email liht22@mails.tsinghua.edu.cn
