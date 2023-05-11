@@ -23,6 +23,7 @@ PRE_SEQ_LEN=64
         --learning_rate 1e-5 \
         --fp16 \
         --logging_steps 50 \
+        --prefix_projection True \
         --pre_seq_len $PRE_SEQ_LEN \
         --output_dir /liuzyai04/thuir/lht/context_learning/Ptuning/output \
         --deepspeed /liuzyai04/thuir/lht/context_learning/Ptuning/ds_config.json \
