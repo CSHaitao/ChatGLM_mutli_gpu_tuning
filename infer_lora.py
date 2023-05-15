@@ -18,7 +18,7 @@ tokenizer = ChatGLMTokenizer.from_pretrained("./chatGLM-6B", trust_remote_code=T
 model = model.eval()
 from peft import PeftModel
 import torch
-model = PeftModel.from_pretrained(model, './checkpoint-2700',torch_dtype=torch.float32)
+model = PeftModel.from_pretrained(model, './checkpoint-2700',torch_dtype=torch.float32).eval()
 model.half().cuda()
 
 input_text = '中华人民共和国刑法第七条'
