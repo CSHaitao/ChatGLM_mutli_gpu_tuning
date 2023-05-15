@@ -9,7 +9,7 @@
 # ChatGLM_multi_gpu_zero_Tuning
 
 实现mult_gpu + zero 微调ChatGLM, 目前已实现LoRA, Ptuning-v2, Freeze三种微调方式。
-
+相关debug记录可以见[知乎](https://zhuanlan.zhihu.com/p/627741267)
 
 ## Data Structure
 
