@@ -135,8 +135,9 @@ datasets==2.8.0
 torch==2.0.0
 pytorch==1.12.1
 deepspeed==0.9.1
-peft==0.2.0 
+peft==0.3.0 
 ```
+一定要使用peft==0.3.0
 
 ## Todo
 
