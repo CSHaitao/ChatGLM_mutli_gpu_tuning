@@ -7,8 +7,9 @@ from transformers.integrations import TensorBoardCallback
 from torch.utils.tensorboard import SummaryWriter
 import sys
 from transformers import TrainingArguments
-from transformers import Trainer, HfArgumentParser,default_data_collator
+from transformers import HfArgumentParser,default_data_collator
 from transformers import AutoTokenizer, AutoModel,AutoConfig
+from trainer_pt import Trainer
 import torch
 import torch.nn as nn
 from accelerate import Accelerator
