@@ -85,6 +85,7 @@ LoRA的参数如下,可根据实际情况调整:
         --learning_rate 1e-5 \
         --fp16 \
         --logging_steps 50 \
+        --prefix_projection True \
         --pre_seq_len $PRE_SEQ_LEN \
         --output_dir /output \
         --deepspeed ds_config.json \
