@@ -42,11 +42,12 @@ class ModifiedTrainer(Trainer):
         from transformers.trainer import TRAINING_ARGS_NAME
 
         os.makedirs(output_dir, exist_ok=True)
-        torch.save(self.args, os.path.join(output_dir, TRAINING_ARGS_NAME))
-        saved_params = {
-            k: v.to("cpu") for k, v in self.model.named_parameters() if v.requires_grad
-        }
-        torch.save(saved_params, os.path.join(output_dir, "adapter_model.bin"))
+        # torch.save(self.args, os.path.join(output_dir, TRAINING_ARGS_NAME))
+        # saved_params = {
+        #     k: v.to("cpu") for k, v in self.model.named_parameters() if v.requires_grad
+        # }
+        self.model.save_pretrained(output_dir)
+        # torch.save(saved_params, os.path.join(output_dir, "adapter_model.bin"))
 
 
 def main():
