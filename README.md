@@ -11,6 +11,8 @@
 实现multi_gpu + zero 微调ChatGLM, 目前已实现LoRA, Ptuning-v2, Freeze三种微调方式。
 相关debug记录可以见[知乎](https://zhuanlan.zhihu.com/p/627741267)
 
+使用该代码训练的法律大模型LexiLaw可见[LexiLaw](https://github.com/CSHaitao/LexiLaw)
+
 ## Data Structure
 
 data.py中使用InstrutionDataset和InstrutionCollator处理数据。
@@ -142,8 +144,6 @@ peft==0.3.0
 ## Todo
 
 - [ ] 增加模型并行和多卡inference
-
-- [ ] 开源微调数据和微调模型
 
 
 ## Contact
