@@ -26,6 +26,7 @@ from datasets import load_dataset
 from tokenization_chatglm import ChatGLMTokenizer
 from typing import TYPE_CHECKING, Any, Callable, Dict, List, Optional, Tuple, Union
 import datasets
+from torch.utils.data import DataLoader, Dataset, RandomSampler, SequentialSampler
 
 
 class CastOutputToFloat(nn.Sequential):
